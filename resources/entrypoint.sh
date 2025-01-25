@@ -2,10 +2,12 @@
 
 set -ex
 
+. entrypoint-common.sh
+
 entrypoint-hooks.sh
 
-migrate-user.sh mysql "$MARIADB_USER_UID"
-migrate-group.sh mysql "$MARIADB_GROUP_GID"
+migrate_uid mysql "$MARIADB_USER_UID"
+migrate_gid mysql "$MARIADB_GROUP_GID"
 
 if [ ! -d /run/mysqld ]; then
     mkdir -p /run/mysqld; chmod 2775 /run/mysqld; chown mysql:mysql /run/mysqld
