@@ -1,9 +1,11 @@
-FROM misotolar/alpine:3.21.2
+FROM misotolar/alpine:3.22.1
 
-LABEL maintainer="michal@sotolar.com"
+LABEL org.opencontainers.image.url="https://github.com/misotolar/docker-mariadb"
+LABEL org.opencontainers.image.description="MariaDB Alpine Linux image"
+LABEL org.opencontainers.image.authors="Michal Sotolar <michal@sotolar.com>"
 
-ENV MARIADB_VERSION=11.4.4
-ENV MARIADB_INSTALL=11.4.4-r1
+ENV MARIADB_VERSION=11.4.8
+ENV MARIADB_INSTALL=11.4.8-r0
 
 ENV MARIADB_USER_UID=100
 ENV MARIADB_GROUP_GID=101
